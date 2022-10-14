@@ -11,7 +11,7 @@ public:
     void SetPointX(double x);
     void SetPointY(double y);
 
-    Point(double x=0,double y=0);
+    explicit Point(double x=0,double y=0);
     static double GetDistance(const Point &A,const Point &B);
 };
 
