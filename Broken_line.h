@@ -8,14 +8,22 @@ private:
     Point *points;
     unsigned int counter;
     unsigned int size;
-    unsigned int growsize;
+    unsigned int grow_size;
 public:
-     explicit Broken_line(unsigned int growsize=5,unsigned int size=1);
+     explicit Broken_line(unsigned int grow_size=5,unsigned int size=1);
 
-     void set_size(int newsize); //задание кол-ва вершин
+     void set_size(int new_size); //задание кол-ва вершин
 
      Point& operator[](int index); //чтение вершины
      void operator()(const Point& value,int index); //запись вершины
+
+     Broken_line& operator+(const Broken_line& second_line); //канкатенация линий
+
+     Broken_line& operator+=(const Point& src) ; //добавление вершины в конец
+     Broken_line& operator+(const Point& src);
+
+     double get_length()const;
+
 
 
 
