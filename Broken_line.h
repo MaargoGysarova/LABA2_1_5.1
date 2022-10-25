@@ -20,7 +20,7 @@ public:
      Broken_line& operator+(const Broken_line& second_line); //канкатенация линий
 
      Broken_line& operator+=(const Point& src) ; //добавление вершины в конец
-     Broken_line& operator+(const Point& src);
+     Broken_line& operator+(const Point& src); //в начало
 
      double get_length()const;
 
