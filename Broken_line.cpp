@@ -79,6 +79,10 @@ double Broken_line::get_length() const{
     return length;
 }
 
+int Broken_line::get_counter() const {
+    return (int)counter;
+}
+
 
 
 

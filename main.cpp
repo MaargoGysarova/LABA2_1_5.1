@@ -20,9 +20,9 @@ Broken_line create_new_line(){
     int x=0,y=0;
     for(int i=0;i<num_of_top;i++){
         cout << "Enter the tup[i+1] values" << endl;
-        cout << "x[i+1]= " << endl;
+        cout << "x["<<i+1<<"]= " << endl;
         cin >> x;
-        cout << "y[i+1]= " << endl;
+        cout << "y["<<i+1<<"]= " << endl;
         cin >> y;
         tmp.SetPointX(x);tmp.SetPointY(y);
         new_line += tmp;
@@ -49,9 +49,9 @@ void add_to_end(Broken_line& line){
     int x=0,y=0;
     cout << "Creating top" << endl;
     cout << "Enter the tup[i+1] values" << endl;
-    cout << "x[i+1]= " << endl;
+    cout << "x = " << endl;
     cin >> x;
-    cout << "y[i+1]= " << endl;
+    cout << "y = " << endl;
     cin >> y;
     Point new_point(x,y);
     line += new_point;
@@ -62,9 +62,9 @@ void add_to_start(Broken_line& line){
     int x=0,y=0;
     cout << "Creating top" << endl;
     cout << "Enter the tup[i+1] values" << endl;
-    cout << "x[i+1]= " << endl;
+    cout << "x = " << endl;
     cin >> x;
-    cout << "y[i+1]= " << endl;
+    cout << "y = " << endl;
     cin >> y;
     Point new_point(x,y);
     line + new_point;
@@ -75,22 +75,48 @@ double get_length(Broken_line& line){
     return line.get_length();
 }
 
+void show_all_tops(Broken_line& line){
+    cout << "Show all tops" << endl;
+    Point tmp;
+    for(int i=0;i<line.get_counter();i++){
+        tmp = line[i];
+        cout << "["<<i<<"]:";
+        cout <<(tmp.GetPointX(),tmp.GetPointY())<< endl;
+    }
+}
+
+void show_one_tops(Broken_line& line){
+    int index=0;
+    cout << "index = " << endl;
+    cin >> index;
+    while (index <= 0 || index> line.get_counter())
+    {
+        cout << "Incorrect value" << endl;
+        cout << "index = ";
+        cin >> index;
+    }
+    Point tmp;
+    tmp = line[index-1];
+    cout << "["<<index<<"]:";
+    cout <<(tmp.GetPointX(),tmp.GetPointY())<< endl;
+}
+
+
 int muny1() {
     cout << "What are you want to do? To press.." << endl;
-    cout << "1 - summarize"<< endl;
-    cout << "2 - summarize with bool"<< endl;
-    cout << "3 - multiply"<< endl;
-    cout << "4 - multiply with bool"<< endl;
-    cout << "5 - invert image" << endl;
-    cout << "6 - image fullness calculation" << endl;
-    cout << "7 - áhange one element" << endl;
-    cout << "8 - show one element" << endl;
-    cout << "9 - print image" << endl;
-    cout << "10 - go out" << endl;
+    cout << "1 - summarize with new line"<< endl;
+    cout << "2 - Add new top to end"<< endl;
+    cout << "3 - Add new top to start"<< endl;
+    cout << "4 - Get length"<< endl;
+    cout << "5 - Change one element" << endl;
+    cout << "6 - Show all tops" << endl;
+    cout << "7 - Show one top" << endl;
+    cout << "8 - Print image" << endl;
+    cout << "9 - Go out" << endl;
     cout << "Operation ü";
     while (true)
     {
         int key = get_key();
-        if ((key == 49) || (key == 50) || (key == 51) || (key == 52) || (key == 53) || (key == 27)) return key;
+        if ((key == 49) || (key == 50) || (key == 51) || (key == 52) || (key == 53) || (key == 54) || (key == 55) || (key == 56) || (key == 57) || (key == 27)) return key;
     }
 }

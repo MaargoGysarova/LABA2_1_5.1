@@ -23,6 +23,7 @@ public:
      Broken_line& operator+(const Point& src); //в начало
 
      double get_length()const;
+     int get_counter() const;
 
 
 
