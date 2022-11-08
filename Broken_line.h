@@ -14,7 +14,7 @@ public:
 
      void set_size(int new_size); //задание кол-ва вершин
 
-     Point& operator[](int index); //чтение вершины
+     Point& operator[](int index)const; //чтение вершины
      void operator()(const Point& value,int index); //запись вершины
 
      Broken_line& operator+(const Broken_line& second_line); //канкатенация линий
@@ -23,6 +23,7 @@ public:
      Broken_line& operator+(const Point& src); //в начало
 
      double get_length()const;
+     static double get_length_two_tops(const Point& A,const Point& B);
      int get_counter() const;
 
 

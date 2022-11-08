@@ -1,7 +1,7 @@
 #include "ESetErrors.h"
 
 void InvalidIndex::print_error() const {
-    cout <<"Index is uncorrected"<<endl;
+    cout <<"Index out of range"<<endl;
 }
 
 void InvalidPoints::print_error() const {

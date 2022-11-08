@@ -2,7 +2,9 @@
 #ifndef LLABA2_5_1_POINT_H
 #define LLABA2_5_1_POINT_H
 
-class Point {
+#include <system_error>
+
+class Point : public std::error_code {
 private:
     double x,y;
 public:
